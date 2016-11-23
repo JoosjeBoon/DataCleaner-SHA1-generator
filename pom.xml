@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.hi</groupId>
         <artifactId>parent-pom</artifactId>
-        <version>1.18</version>
+        <version>1.21</version>
     </parent>
 
     <groupId>com.hi.datacleaner.sha1</groupId>
     <artifactId>DataCleaner-SHA1</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
     <name>DataCleaner SHA1 generator</name>
@@ -32,8 +32,7 @@
     </repositories>
 
     <properties>
-        <!--<datacleaner.version>5.0.3</datacleaner.version>-->
-        <datacleaner.version>4.5.1</datacleaner.version>
+        <datacleaner.version>5.0.2.3</datacleaner.version>
     </properties>
 
     <build>

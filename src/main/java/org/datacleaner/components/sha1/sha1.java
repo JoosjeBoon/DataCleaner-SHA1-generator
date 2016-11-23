@@ -1,10 +1,17 @@
 package org.datacleaner.components.sha1;
 
 
-import org.datacleaner.api.*;
-import org.datacleaner.components.categories.TextCategory;
-
 import javax.inject.Named;
+
+import org.datacleaner.api.Categorized;
+import org.datacleaner.api.Concurrent;
+import org.datacleaner.api.Configured;
+import org.datacleaner.api.Description;
+import org.datacleaner.api.InputColumn;
+import org.datacleaner.api.InputRow;
+import org.datacleaner.api.OutputColumns;
+import org.datacleaner.api.Transformer;
+import org.datacleaner.components.categories.TextCategory;
 
 @Named("Generate SHA1")
 @Categorized(TextCategory.class)
@@ -41,7 +48,7 @@ public class sha1 implements Transformer {
         }
         if (input == null || input.isEmpty() || input == "") {
 
-            sha1 = generate_sha1.getHash(String.valueOf( inputRow.getId()));
+            sha1 = generate_sha1.getHash(String.valueOf(inputRow.getId()));
         } else {
             sha1 = generate_sha1.getHash(input.trim());
         }
