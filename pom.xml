@@ -30,7 +30,7 @@
     </repositories>
 
     <properties>
-        <datacleaner.version>5.0.2.3</datacleaner.version>
+        <datacleaner.version>5.0.3</datacleaner.version>
     </properties>
 
     <build>

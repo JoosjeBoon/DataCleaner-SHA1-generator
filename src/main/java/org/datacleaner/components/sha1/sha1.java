@@ -3,6 +3,7 @@ package org.datacleaner.components.sha1;
 
 import javax.inject.Named;
 
+import org.apache.commons.lang3.StringUtils;
 import org.datacleaner.api.Categorized;
 import org.datacleaner.api.Concurrent;
 import org.datacleaner.api.Configured;
@@ -37,22 +38,18 @@ public class sha1 implements Transformer {
         String sha1 = null;
 
         for (int i = 0; i < columns.length; i++) {
-            if ((inputRow.getValues(columns[i]).get(0) != null)) {
+            if (inputRow.getValues(columns[i]).get(0) != null) {
                 value = inputRow.getValues(columns[i]).get(0).toString().trim();
-
             }
             if (!value.equalsIgnoreCase("")) {
             input = input + " "+ value;
             }
-
         }
-        if (input == null || input.isEmpty() || input == "") {
-
+        if (StringUtils.isEmpty(input)) {
             sha1 = generate_sha1.getHash(String.valueOf(inputRow.getId()));
         } else {
             sha1 = generate_sha1.getHash(input.trim());
         }
-
 
         return new String[]{sha1};
     }
